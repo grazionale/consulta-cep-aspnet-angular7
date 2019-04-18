@@ -1,0 +1,41 @@
+<div class="box-gg">
+  <form>
+    <div class="form-group">
+      <label for="cep">Informe o número do CEP</label>
+      <input type="text" class="form-control" id="cep" aria-describedby="cep" placeholder="86020030" [(ngModel)]="cep" name="cep">
+      <small id="emailHelp" class="form-text text-muted">Informe apenas números.</small>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="consultar()">Consultar</button>
+  </form>
+</div>
+
+<div class="box-gg">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Cep</th>
+        <th scope="col">Logradouro</th>
+        <th scope="col">Complemento</th>
+        <th scope="col">Bairro</th>
+        <th scope="col">Localidade</th>
+        <th scope="col">Uf</th>
+        <th scope="col">Unidade</th>
+        <th scope="col">Ibge</th>
+        <th scope="col">Gia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let cidade of dados'>
+        <td>{{cidade.cep}}</td>
+        <td>{{cidade.logradouro}}</td>
+        <td>{{cidade.complemento}}</td>
+        <td>{{cidade.bairro}}</td>
+        <td>{{cidade.localidade}}</td>
+        <td>{{cidade.uf}}</td>
+        <td>{{cidade.unidade}}</td>
+        <td>{{cidade.ibge}}</td>
+        <td>{{cidade.gia}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
